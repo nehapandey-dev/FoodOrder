@@ -1,29 +1,40 @@
 import React from 'react'
 
-const Menucards = ({menuData}) =>{
-    
+const Menucards = ({ menuData }) => {
+
   return (<>
     <section className='main-card-container' ><h2>Order your Delicious food here😋</h2>
-    {menuData.map((curElement)=>{
-        return(<><div></div>
-    <div className='card-container' key={curElement.id}>
-            <div className='card'>
+      {menuData.map((curElement) => {
+        const { id, name, price, category, img, description } = curElement;
+        return (
+          <>
+            <div className='card-container' key={id}>
+              <div className='card'>
+                <div className='card-num card-circle subtle'></div>
                 <div className='card-body'>
-                    <div className='card-num card-circle subtle'></div>
-                    <div className='card-auth substitle'>{curElement.category}</div>
-                    <div className='card-desc substitle'>
-                        <h1 className='card-title'>{curElement.name}</h1>
-                        <h4 >{curElement.description}</h4></div>
-                    
+
+                  <div className='card-auth substitle'>{category}</div>
+                  <div className='card-desc substitle'>
+                    <h1 className='card-title'>{name}</h1>
+                    <h4 >{description}</h4>
+                    <h4 className='price'>Rs {price}.00</h4>
+                  </div>
                 </div>
-                <img src={curElement.img} alt="img" className='media'></img>
+                <div>
+                  <img src={img} alt="img" className='media'></img>
+                </div>
                 <button className="btns" >Order Now</button>
+              </div>
+
+              
+
+
             </div>
-        </div>
-        </>);
-    })}
+
+          </>);
+      })}
     </section>
-    </>
+  </>
   );
 }
 

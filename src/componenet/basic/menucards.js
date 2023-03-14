@@ -10,8 +10,8 @@ const Menucards = ({ menuData }) => {
         return (
           <>
 
-            <div className='card-container' key={id}>
-              <div className='card'>
+            <div className='card-container'>
+              <div className='card'  key={id}>
                 <div className='card-num card-circle subtle'></div>
                 <div className='card-body'>
 

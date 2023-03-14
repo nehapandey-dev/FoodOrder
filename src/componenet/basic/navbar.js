@@ -11,10 +11,11 @@ function Navbar({ filteritem, menuList }) {
 
             <nav className="navbar">
                 <div className="btn-group">
-                    {menuList.map((curElement) => {
+                    {menuList.map((curElement,index) => {
                         return (
                             <button
                                 className="btn-group__item"
+                                key={index}
                                 onClick={() => filteritem(curElement)}
                             >
                                 {curElement}

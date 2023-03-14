@@ -15,15 +15,17 @@ const Resturant = () => {
     const filteritem = (category) => {
         if (category === "All") {
             setMenuData(Menu);
+            //we have to pass return keyword for return all the value
             return
         }
         const updatedList = Menu.filter((curElement) => {
             return curElement.category === category;
         });
         setMenuData(updatedList);
+        setMenuList(menuList)
     }
     return (<>
-        <Navbar filteritem={filteritem} menuList={menuList} />
+        <Navbar filteritem={filteritem}  menuList={menuList} />
         <Menucards menuData={menuData} /></>
     );
 }

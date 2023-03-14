@@ -3,11 +3,13 @@ import React from 'react'
 const Menucards = ({ menuData }) => {
 
   return (<>
-    <section className='main-card-container' ><h2>Order your Delicious food here😋</h2>
+    <section className='main-card-container' >
       {menuData.map((curElement) => {
         const { id, name, price, category, img, description } = curElement;
+
         return (
           <>
+
             <div className='card-container' key={id}>
               <div className='card'>
                 <div className='card-num card-circle subtle'></div>
@@ -20,15 +22,12 @@ const Menucards = ({ menuData }) => {
                     <h4 className='price'>Rs {price}.00</h4>
                   </div>
                 </div>
+
                 <div>
                   <img src={img} alt="img" className='media'></img>
                 </div>
                 <button className="btns" >Order Now</button>
               </div>
-
-              
-
-
             </div>
 
           </>);
